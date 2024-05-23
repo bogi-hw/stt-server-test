@@ -1,32 +1,39 @@
-import express from "express"
-import {createServer} from "vite"
-import {GreeterSession} from "./GreeterSession.js"
-import {restfuncsExpress} from "restfuncs-server";
-import helmet from "helmet";
+import * as vosk from 'vosk';
+import * as fs from "node:fs";
 
-(async () => {
-    const port = 3000
+import * as mic from "mic";
 
-    const app = restfuncsExpress()
+const MODEL_PATH = "model"
+const SAMPLE_RATE = 16000
 
-    app.use("/greeterAPI", GreeterSession.createExpressHandler() )
+if (!fs.existsSync(MODEL_PATH)) {
+    console.log("Please download the model from https://alphacephei.com/vosk/models and unpack as " + MODEL_PATH + " in the current folder.")
+    process.exit()
+}
 
-    // Client web:
-    if (process.env.NODE_ENV === 'development') {
-        // Serve web web through vite dev server:
-        const viteDevServer = await createServer({
-            server: {
-                middlewareMode: true
-            },
-            root: "web",
-            base: "/",
-        });
-        app.use(viteDevServer.middlewares)
-    } else {
-        app.use(helmet(), express.static('web/dist')) // Serve pre-built web (npm run build)
-    }
+vosk.setLogLevel(0);
+const model = new vosk.Model(MODEL_PATH);
+const rec = new vosk.Recognizer({model: model, sampleRate: SAMPLE_RATE});
 
-    app.listen(port)
-    console.log("Server started: http://localhost:" + port)
+var micInstance = mic({
+    rate: String(SAMPLE_RATE),
+    channels: '1',
+    debug: false
+});
 
-})()
+var micInputStream = micInstance.getAudioStream();
+micInstance.start();
+
+micInputStream.on('data', data => {
+    if (rec.acceptWaveform(data))
+        console.log(rec.result());
+    else
+        console.log(rec.partialResult());
+});
+
+process.on('SIGINT', function() {
+    console.log(rec.finalResult());
+    console.log("\nDone");
+    rec.free();
+    model.free();
+});
