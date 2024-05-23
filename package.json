@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./server",
   "scripts": {
+    "dev_recordAudio": "arecord --channels 1 --rate 16000 test2.wav",
     "dev": "npm run clean && cross-env NODE_ENV=development tsx watch server/server.ts",
     "clean": "tspc --build --clean && rimraf web/dist",
     "build": "tspc --build --force && cd web && vite build",
@@ -27,7 +28,8 @@
     "@blueprintjs/core": "^5.10.3",
     "react-draggable": "^4.4.6",
     "vosk": "^0.3.39",
-    "mic": "^2.1.2"
+    "mic": "^2.1.2",
+    "wav": "^1.0.2"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
