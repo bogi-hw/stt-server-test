@@ -28,7 +28,6 @@
     "@blueprintjs/core": "^5.10.3",
     "react-draggable": "^4.4.6",
     "vosk": "^0.3.39",
-    "mic": "^2.1.2",
     "wav": "^1.0.2"
   },
   "devDependencies": {
