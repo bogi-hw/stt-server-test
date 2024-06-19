@@ -5,6 +5,7 @@ import * as fs from "node:fs";
 
 import { Readable } from "node:stream";
 import * as wav from "wav";
+import {normalizeRecognized} from "./playground";
 
 const MODEL_PATH = "model"
 const FILE_NAME = "test.wav"
@@ -47,7 +48,14 @@ wfReader.on('format', async ({ audioFormat, sampleRate, channels }) => {
         }
     }
     let result = rec.finalResult(rec);
+
     console.log(JSON.stringify(result, null, 4));
+
+    const text: string | undefined = result.alternatives?.[0]?.text;
+    if(text) {
+        console.log(`Normalized text: ${normalizeRecognized(text)}`);
+    }
+
     rec.free();
 });
 

@@ -1,0 +1,30 @@
+Vorgegebener Text:
+start NV322 DX590 JP869 T1445 QS2559 U64 XH19 OH68 UR352 BQ13 H9284 W9533 L7240 Y1793 HT19 X28 PO5349 T3257 V414 C439 pause weiter K8 egal KQ456 A1 egal mao L940 brumm brumm brumm brumm A9016  stop 
+
+
+
+Am PC mit Headset ohne Störgeräusche:
+start nv322 dx590 jp869 t1445 qs2559 u64 xh19 oh68 ur352 bq13 h9284 w9533 l7240 y1793 ht19 x28 po5349 t3257 v414 c439 pause weiter k8 egal kq456 a1 egal mao l940 brumm brumm brumm brumm a9016 stop
+
+Eisenbahnstr Handymikro 17_23.wav:
+      1v322 dx590 jt869 t1445 es2559 u64 xh1i oh68 u352 wq12 h9284 w9533 l7240 y1793 xht19 x28 to5249 t3257 v41  c43 pause weiter k8 egal kq456 a1 egal mao l940 brumm brumm brumm brumm a906 stop
+12 von 23
+
+Eisenbahnstr Headset 17_23.wav:
+start mv322 dx59 jt86 t1445 qsv hilfe      x19 oh68 u352  bq13 h9284 w9533 l7240 y1793 ht19 x28 to53k9 t3257 v414 c439 pause weiter k8 egal kq456 a1 egal mao l940 brumm brumm brumm brumm h906 stop
+= 14 von 23
+
+Eisenbahnstr Headset 17_23.wav 44khz und noise reduction in audacity:
+start lv322 dx59 jt86 t1445 qsv hilfe yg64 x19 oh68 ur352 bq13 h9284 w9533 l7240 y1793 ht19 x28 to53k9 t3257 v414 c439 pause weiter k8 egal hq456 a1 egal mao l940 brumm brumm brumm brumm h9016 stop
+= 15/23
+
+
+Fehler Headset:
+- l statt n
+- 0 verschluckt (kein plan, wieso, hätte vosk erkennen müssen)
+- t statt p
+- 9 verschluckt (kein plan, wieso, hätte vosk erkennen müssen)
+- undefiniert
+- t statt p
+- h statt k
+- h statt a
