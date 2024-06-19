@@ -7,8 +7,10 @@
   "scripts": {
     "dev_recordAudio": "arecord --channels 1 --rate 16000 test2.wav",
     "dev": "npm run clean && cross-env NODE_ENV=development tsx watch server/server.ts",
+    "dev:Playground": "tsx server/playground.ts",
     "clean": "tspc --build --clean && rimraf web/dist",
     "build": "tspc --build --force && cd web && vite build",
+    "test": "npm run clean && vitest --clearScreen --hideSkippedTests",
     "start": "cross-env NODE_ENV=production node --enable-source-maps server/server.js"
   },
   "dependencies": {
@@ -37,6 +39,8 @@
     "nodemon": "^2.0.15",
     "cross-env": "^7.0.3",
     "rimraf": "=5.0.5",
-    "@types/node": "^20.12.7"
+    "@types/node": "^20.12.7",
+    "vitest": "^1.5.0",
+    "@vitest/ui": "^1.5.1"
   }
 }
