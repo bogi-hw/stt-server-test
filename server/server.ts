@@ -27,7 +27,7 @@ wfReader.on('format', async ({ audioFormat, sampleRate, channels }) => {
         process.exit(1);
     }
 
-    const grammar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "null", "eins", "zwei", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun",
+    const grammar = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "null", "eins", "zwei", "zwo", "drei", "vier", "fünf", "sechs", "sieben", "acht", "neun",
         "start",
         "stop", "pause",
         "hilfe", "unterstützung",

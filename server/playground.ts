@@ -2,7 +2,7 @@ import {erkennungsNummerErzeugen} from "./kennzeichenUtil";
 
 export function normalizeRecognized(value: string) {
     const ziffernMap = {
-        "null": 0, "eins": 1, "zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6, "sieben": 7, "acht": 8, "neun": 9}
+        "null": 0, "eins": 1, "zwei": 2, "zwo": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6, "sieben": 7, "acht": 8, "neun": 9}
 
     Object.keys(ziffernMap).forEach(text => {
         value = value.replaceAll(text, ziffernMap[text]);
