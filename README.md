@@ -3,7 +3,9 @@
 
 
 ## Anleitung
-
+- [Build tools installieren für ffi-napi](https://github.com/TooTallNate/node-gyp#installation)
+- `git clone https://github.com/bogi-hw/stt-server-test.git`
+-  `cd stt-server-test` 
 - `npm install`
 - Audiodatei zu **mono** konvertieren und speichern:  
      Z.B per Audacity:
